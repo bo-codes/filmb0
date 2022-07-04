@@ -5,46 +5,53 @@ import { thunkGetAllImages } from '../../store/images';
 import CreateImageModal from '../ImageFormModal';
 import ImageForm from '../ImageFormModal/ImageForm';
 
-// import './images.css'
+import './images.css'
+
 
 
 export default function Images() {
   const dispatch = useDispatch();
 
-
-
   useEffect(() => {
-    dispatch(thunkGetAllImages())
-  }, [dispatch])
+    dispatch(thunkGetAllImages());
+  }, [dispatch]);
 
-
-
-  const imagesList = useSelector(state => Object.values(state.images))
-  const sessionUser = useSelector(state => state.session.user);
-
+  const imagesList = useSelector((state) => Object.values(state.images));
+  const sessionUser = useSelector((state) => state.session.user);
 
   return (
-    <>
+    <div className='background' style={{overflow: 'hidden'}}>
       <h1 id="title">Experience</h1>
-      {sessionUser &&
-      <>
-        <CreateImageModal />
-      </>
-      }
-      <div className='imageCard'>
-        {imagesList.map(image => {
+      {sessionUser && (
+        <>
+          <CreateImageModal />
+        </>
+      )}
+      <div className="imageCard" style={{ columns: 4, columnGap: 0}}>
+        {imagesList.map((image) => {
           return (
-            <div key={image.id} className='imageContainer'>
-              <Link to={`/images/${image.id}`} id="imageLink">
-                <img src={image.imageUrl} alt="coverImg" id="imageImg"></img>
-                <h3 id="imageContentTitle">{image.title}</h3>
+            <div key={image.id} style={{alignContent: 'center'}}>
+              {/* <div key={image.id} className="image"> */}
+              <Link to={`/images/${image.id}`} className="image" style={{position: 'relative'}}>
+                <div className='overlay'>
+                  <h3 style={{color: 'white'}}>{image.title}</h3>
+                </div>
+                <img
+                  src={image.imageUrl}
+                  alt="coverImg"
+                  className="image"
+                  style={{ padding: 2.5 }}
+                >
+                </img>
               </Link>
-              <p>{image.content}</p>
+              {/* <h3 id="imageContentTitle">{image.title}</h3>
+              <p>{image.content}</p> */}
+              {/* </div> */}
             </div>
-            )
-          })
-        }
+          );
+        })}
       </div>
-    </>
-  )
+    </div>
+  );
+
 }

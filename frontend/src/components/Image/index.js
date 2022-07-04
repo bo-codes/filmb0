@@ -5,6 +5,8 @@ import { thunkGetImage, thunkDeleteImage } from '../../store/images';
 import EditFormModal from '../EditImageModal';
 import EditForm from '../EditImageModal/EditForm';
 import Comments from '../Comments';
+
+import "/Users/eli/Desktop/filmb0--/frontend/src/index.css";
 // import './image.css'
 
 
@@ -33,7 +35,7 @@ export default function ImageId() {
 
   if(!sessionUser) {
     return (
-      <>
+      <div className='background'>
         <div className='imageDetails'>
           <img src={image.imageUrl} id='imageDetailImg'></img>
           <h1>{image.title}</h1>
@@ -41,31 +43,48 @@ export default function ImageId() {
 
         </div>
         <Comments />
-      </>
+      </div>
       )
   }
 
   return (
-    <>
-      <div className='imageDetails'>
+    <div className="background">
+      <div
+        className="imageDetails"
+        style={{
+          maxWidth: "88vw",
+          maxHeight: "88vh",
+          display: "block",
+          marginLeft: "auto",
+          marginRight: "auto",
+        }}
+      >
         <>
-          <img src={image.imageUrl} id='imageDetailImg'></img>
+          <img
+            src={image.imageUrl}
+            id="imageDetailImg"
+            style={{
+              maxWidth: "88vw",
+              maxHeight: "88vh",
+              display: "block",
+              marginLeft: "auto",
+              marginRight: "auto",
+              marginTop: "30px",
+            }}
+          ></img>
           <h1>{image.title}</h1>
           <p>{image.content}</p>
         </>
-        {sessionUser.id === image.userId &&
-          (
-            <>
-              <EditFormModal />
-              <button
-              onClick={onDelete}>
-                <i className="fa-solid fa-trash"></i>
-              </button>
-            </>
-          )
-        }
+        {sessionUser.id === image.userId && (
+          <>
+            <EditFormModal />
+            <button onClick={onDelete}>
+              <i></i>
+            </button>
+          </>
+        )}
       </div>
       <Comments />
-    </>
-  )
+    </div>
+  );
 }

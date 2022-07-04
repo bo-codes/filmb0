@@ -21,16 +21,22 @@ export default function ImageForm(props) {
       !imageUrl.endsWith(".png") &&
       !imageUrl.endsWith(".gif")
     ) {
-      errors.push("Image file must be a .jpg, .jpeg, .png, or .gif");
+      if(errors) errors.push("Image file must be a .jpg, .jpeg, .png, or .gif, ");
+      else errors.push("Image file must be a .jpg, .jpeg, .png, or .gif");
+    }
+
+    if (!title) {
+      if(errors)  errors.push("Please provide a title for your post, ");
+      else errors.push('Please provide a title for your post')
     }
     setValidationErrors(errors);
-  }, [imageUrl]);
+  }, [imageUrl, title]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
     setSubmitted(true);
-    if (validationErrors.length) return alert("Please complete form before submitting");
+    if (validationErrors.length) return alert(validationErrors);
 
 
     const newPhoto = {
@@ -49,7 +55,7 @@ export default function ImageForm(props) {
     setContent("");
     setSubmitted(false);
     setValidationErrors([]);
-    // props.setTrigger(false);
+    props.setTrigger(false);
   };
 
   return (

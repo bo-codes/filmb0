@@ -18,7 +18,7 @@ function App() {
   }, [dispatch]);
 
   return (
-    <>
+    <div style={{overflow: "hidden"}} className='background'>
       <Navigation isLoaded={isLoaded} />
       {isLoaded && (
         <Switch>
@@ -37,7 +37,7 @@ function App() {
         </Switch>
       )}
 
-    </>
+    </div>
   );
 }
 

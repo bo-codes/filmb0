@@ -1,4 +1,18 @@
+.buttonlink {
+  /* height: 40px; */
+  background-color: rgb(70, 70, 101);
+  text-decoration: none;
+  color: white;
+  padding: 6px;
+  border-radius: 5px;
+}
+
 .button {
   /* height: 40px; */
-  background-color: rgb(170, 170, 255);
+  background-color: rgb(70, 70, 101);
+  color: white;
+}
+
+.background {
+  background-color: rgb(0, 0, 0);
 }

@@ -28,6 +28,7 @@ export default function EditForm(props) {
         "Please provide an image file with extensions: .jpg, .jpeg, .png, or .gif"
       );
     }
+    if (!title) errors.push("Please provide a title for your post");
     // if(!title) {
     //   errors.push('Please provide a title')
     // }
@@ -35,14 +36,16 @@ export default function EditForm(props) {
     //   errors.push('Title must be less than 100 characters')
     // }
     setValidationErrors(errors);
-  }, [imageUrl]);
+  }, [imageUrl, title]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     setSubmitted(true);
     console.log(validationErrors);
-    if (validationErrors.length) return alert("Please complete form before submitting");
+    if (validationErrors.length) return alert(
+      `${validationErrors}`
+    );
 
     const newImage = {
       ...image,

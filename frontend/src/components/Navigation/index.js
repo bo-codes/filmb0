@@ -41,9 +41,9 @@ function Navigation({ isLoaded }){
   }
 
   return (
-    <div className="navBar">
+    <div className="navBar" style={{overflow: "scroll"}}>
       <ul className="navBar">
-        <NavLink exact to="/" id="logo">
+        <NavLink exact to="/" id="logo" className='buttonlink'>
           <>
             <img
               src="/Users/eli/Pictures/Lightroom Saved Photos/for sale/filmb0--/frontend/public/film.png"
@@ -52,10 +52,10 @@ function Navigation({ isLoaded }){
             <label id="logoTitle">b0film</label>
           </>
         </NavLink>
-        {isLoaded && sessionLinks}
-        <NavLink to="/images" id="beachesLink">
+        <NavLink to="/images" id="beachesLink" className='buttonlink'>
           Images
         </NavLink>
+        {isLoaded && sessionLinks}
       </ul>
     </div>
   );
