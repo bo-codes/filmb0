@@ -14,21 +14,14 @@ export default function ImageForm(props) {
 
   useEffect(() => {
     const errors = [];
+
     if (
       !imageUrl.endsWith(".jpg") &&
+      !imageUrl.endsWith(".jpeg") &&
       !imageUrl.endsWith(".png") &&
       !imageUrl.endsWith(".gif")
     ) {
-      errors.push(
-        "Please provide an image file with extensions: .jpg, .png, or .gif"
-      );
-    }
-    if (
-      !imageUrl.endsWith(".jpg") &&
-      !imageUrl.endsWith(".png") &&
-      !imageUrl.endsWith(".gif")
-    ) {
-      errors.push("Image file must be a .jpg, .png, or .gif");
+      errors.push("Image file must be a .jpg, .jpeg, .png, or .gif");
     }
     setValidationErrors(errors);
   }, [imageUrl]);
