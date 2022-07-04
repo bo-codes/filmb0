@@ -6,7 +6,7 @@ import EditFormModal from '../EditImageModal';
 import EditForm from '../EditImageModal/EditForm';
 import Comments from '../Comments';
 
-import "/Users/eli/Desktop/filmb0--/frontend/src/index.css";
+// import "/Users/eli/Desktop/filmb0--/frontend/src/index.css";
 // import './image.css'
 
 
