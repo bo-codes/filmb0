@@ -63,9 +63,6 @@ function Navigation({ isLoaded }){
         <NavLink to="/images" className="buttonlink">
           Images
         </NavLink>
-        <Link href="https://www.linkedin.com/in/elias-rodriguez-066080155/">
-          About
-        </Link>
         {isLoaded && sessionLinks}
       </ul>
     </div>
