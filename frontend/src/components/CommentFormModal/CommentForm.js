@@ -55,7 +55,6 @@ const handleSubmit = (e) => {
               <ul>
                 {validationErrors.map((error) => (
                   <ul key={error}>
-                    <i className="fas fa-spinner fa-pulse"></i>
                     {error}
                   </ul>
                 ))}
