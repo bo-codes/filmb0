@@ -1,10 +1,15 @@
 # Welcome to filmb0
 
-Check out a live version of filmb0 here: https://filmb0.herokuapp.com/images
+Check out a live version of filmb0 here: [filmb0](https://filmb0.herokuapp.com/images)
 
 filmb0 is a clone of the website flickr, a photo sharing and archive application. The backend of filmb0 is built on express with a PostgresQL database. Frontend rendering it handled with React. Redux architecture is used to manage the data on the frontend.
 
+<img width="2544" alt="Screen Shot 2022-07-05 at 6 38 22 AM" src="https://user-images.githubusercontent.com/99310710/177345838-ff6aa761-3d7b-4a8e-827c-91ec6562dfbd.png">
+
+
 ## Features & Implementation
+
+For a list of the features/app functionality , follow this link: [Feature List](https://github.com/bo-codes/film-b0/wiki/Feature-List)
 
 ### Single-Page-App
 
@@ -20,7 +25,8 @@ filmb0 server interactions are limited to retrieval of data from and modificatio
 
 Auth Page
 
-IMG
+<img width="2560" alt="Screen Shot 2022-07-05 at 7 03 50 AM" src="https://user-images.githubusercontent.com/99310710/177346362-6c04b5f9-fea9-4a0c-b89f-bc3e34c2ad26.png">
+
 
 Normal Authentication
 
@@ -36,9 +42,8 @@ The Image table has columns for the ```title```,```imageUrl```, ```userId```, an
 
 CRUD and redux architecture
 
-filmb0 lets users create, read, update, and delete images. React components exist for each corresponding action in the app. Information needed for all components or user actions performed on a subcomponent are managed with redux. Click the following link for more on this.
+filmb0 lets users create, read, update, and delete images. React components exist for each corresponding action in the app. Information needed for all components or user actions performed on a subcomponent are managed with redux. Click the following link for more on this:[Store Shape](https://github.com/bo-codes/filmb0/wiki/Store-Shape)
 
-LINK
 
 ### Comments
 
@@ -47,3 +52,5 @@ Besides storing images, filmb0 also lets users comment on images.
 Comment Model
 
 There is a table in the filmb0 database for comments. This table has columns for imageId because each comment pertains to a specific image that was posted, and a userId which ties the given comment with the creator of said comment. This table gives us the ability to populate our image page with comments that were made and tied with that specific image. The list of comments for the given image is updated as comments are deleted or added.
+
+To view all tables implemented in the project click the following link: [dbSchema](https://github.com/bo-codes/film-b0/wiki/dbSchema)
