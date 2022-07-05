@@ -27,7 +27,7 @@ export default function Images() {
           <CreateImageModal />
         </>
       )}
-      <div className="imageCard" style={{ columns: 4, columnGap: 0}}>
+      <div className="imageCard">
         {imagesList.map((image) => {
           return (
             <div key={image.id} style={{alignContent: 'center'}}>

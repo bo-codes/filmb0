@@ -5,6 +5,7 @@ import { thunkGetComments, thunkDeleteComment } from '../../store/comments';
 import LoginFormModal from '../LoginFormModal';
 import CreateCommentModal from '../CommentFormModal';
 import CommentForm from '../CommentFormModal/CommentForm';
+import './comments.css'
 
 export default function Comments() {
   const dispatch = useDispatch();
@@ -24,51 +25,57 @@ export default function Comments() {
   }
 
   return (
-    <>
-      <h1>comments</h1>
-      {!comments.length &&
+    <div style={{
+      color: "white",
+      marginLeft: '77px',
+      marginTop: "160px",
+      paddingTop: '110px',
+      paddingBottom: '88px'
+      // background: 'blue'
+      }}>
+      <h1>thoughts</h1>
+      {!comments.length && (
         <>
-          <h2> Doest seem to be any comments yet... why don't you start us off!</h2>
+          <h2>
+            {" "}
+            Doest seem to be any comments yet... why don't you start us off!
+          </h2>
         </>
-      }
-      {sessionUser &&
-        <CreateCommentModal />
-      }
-      {!sessionUser &&
-      <text>
-        Want to leave a comment?
-        <LoginFormModal />
-      </text>
-      }
-        <table>
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>comment</th>
-            </tr>
-          {comments.map(comment => {
+      )}
+      {!sessionUser && (
+        <text>
+          Want to leave a comment?
+          <LoginFormModal />
+        </text>
+      )}
+      <table style={{padding: '10px'}}>
+        <thead>
+          {/* <tr>
+            <th>Name</th>
+            <th>thought</th>
+          </tr> */}
+          {comments.map((comment) => {
             return (
               <tr key={comment.id}>
-                <td>{comment.User.username}</td>
-                <td>{comment.comment}</td>
-                { sessionUser?.id === comment.userId &&
-                  (
-                    <>
-                      <td>
-                        <button
-                          onClick={() => dispatch(thunkDeleteComment(comment.id))}
-                        >
-                          <i className="fa-solid fa-trash"></i>
-                        </button>
-                      </td>
-                    </>
-                  )
-                }
+                <td style={{fontWeight: '500px', background: 'grey'}}>{comment.User.username}</td>
+                <td style={{background: '#373737'}}>{comment.comment}</td>
+                {sessionUser?.id === comment.userId && (
+                  <>
+                    <td>
+                      <button
+                        onClick={() => dispatch(thunkDeleteComment(comment.id))}
+                      >
+                        <i className="fa-solid fa-trash"></i>
+                      </button>
+                    </td>
+                  </>
+                )}
               </tr>
-              )
-            })}
-          </thead>
-        </table>
-    </>
-  )
+            );
+          })}
+        </thead>
+      </table>
+      {sessionUser && <CreateCommentModal />}
+    </div>
+  );
 }

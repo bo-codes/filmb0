@@ -42,7 +42,9 @@ router.get('/', async (req, res) => {
 router.get("/:imageId", async(req, res) => {
   const imageId = req.params.imageId
   const image = await Image.findByPk(imageId, {
-    include: [{model: Comment, as: "comments"}]
+    include: [{
+      model: Comment, as: "comments"
+    },{model: User}]
   })
 
 
