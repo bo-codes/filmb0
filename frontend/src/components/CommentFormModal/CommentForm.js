@@ -44,7 +44,7 @@ const handleSubmit = (e) => {
 
   return (
     <>
-      <section className="reviewForm" style={{marginBottom: '88px'}}>
+      <section style={{marginBottom: '88px'}}>
         <h1>What are you thinking </h1>
         <form
           className="login-form"

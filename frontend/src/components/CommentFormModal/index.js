@@ -8,7 +8,7 @@ function CreateCommentModal() {
 
   return (
     <>
-      <button className="createCommentBttn" onClick={() => setShowModal(true)}>Write a Comment</button>
+      <button onClick={() => setShowModal(true)}>Write a Comment</button>
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>
           <CommentForm trigger={showModal} setTrigger={setShowModal}/>

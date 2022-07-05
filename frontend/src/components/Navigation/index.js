@@ -1,7 +1,7 @@
 // frontend/src/components/Navigation/index.js
 import React from 'react';
 import * as sessionActions from "../../store/session";
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import ProfileButton from './ProfileButton';
 import LoginFormModal from '../LoginFormModal';
@@ -43,8 +43,8 @@ function Navigation({ isLoaded }){
   }
 
   return (
-    <div className="navBar" style={{marginBottom: '100px'}}>
-      <ul >
+    <div className="navBar" style={{ marginBottom: "100px" }}>
+      <ul>
         <NavLink
           exact
           to="/"
@@ -60,9 +60,12 @@ function Navigation({ isLoaded }){
             ></img>
           </>
         </NavLink>
-        <NavLink to="/images" className="buttonlink" >
+        <NavLink to="/images" className="buttonlink">
           Images
         </NavLink>
+        <Link href="https://www.linkedin.com/in/elias-rodriguez-066080155/">
+          About
+        </Link>
         {isLoaded && sessionLinks}
       </ul>
     </div>

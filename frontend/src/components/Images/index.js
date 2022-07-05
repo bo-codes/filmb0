@@ -47,9 +47,6 @@ export default function Images() {
                   >
                 </img>
               </Link>
-              {/* <h3 id="imageContentTitle">{image.title}</h3>
-              <p>{image.content}</p> */}
-              {/* </div> */}
             </div>
           );
         })}

@@ -29,12 +29,7 @@ export default function EditForm(props) {
       );
     }
     if (!title) errors.push("Please provide a title for your post");
-    // if(!title) {
-    //   errors.push('Please provide a title')
-    // }
-    // if(title.length > 100) {
-    //   errors.push('Title must be less than 100 characters')
-    // }
+
     setValidationErrors(errors);
   }, [imageUrl, title]);
 
@@ -118,68 +113,4 @@ export default function EditForm(props) {
       </form>
     </div>
   );
-  // return (
-  //   <>
-  //     <section className="beachForm">
-  //       <h1>Editing {beach.title}</h1>
-  //       <form className="createnewImage" onSubmit={handleSubmit}>
-  //         {hasSubmitted && validationErrors.length > 0 && (
-  //           <div>
-  //             Wow there! Fix these up before you go 😉:
-  //             <ul>
-  //               {validationErrors.map((error) => (
-  //                 <ul key={error}>
-  //                   <i className="fas fa-spinner fa-pulse"></i>
-  //                 {error}
-  //                 </ul>
-  //               ))}
-  //             </ul>
-  //           </div>
-  //         )}
-  //         <input
-  //           type="text"
-  //           placeholder="Beach Image URL"
-  //           value={coverImg}
-  //           onChange={(e) => setCoverImg(e.target.value)}
-  //         />
-  //         <input
-  //           type="text"
-  //           placeholder="Title"
-  //           value={title}
-  //           onChange={(e) => setTitle(e.target.value)}
-  //         />
-  //         <textarea
-  //           placeholder="Description of beach 🌊"
-  //           value={description}
-  //           onChange={(e) => setDescription(e.target.value)}
-  //         />
-  //         <input
-  //           type="text"
-  //           placeholder="Address"
-  //           value={address}
-  //           onChange={(e) => setAddress(e.target.value)}
-  //         />
-  //         <input
-  //           type="text"
-  //           placeholder="City"
-  //           value={city}
-  //           onChange={(e) => setCity(e.target.value)}
-  //         />
-  //         <input
-  //           type="text"
-  //           placeholder="Country"
-  //           value={country}
-  //           onChange={(e) => setCountry(e.target.value)}
-  //         />
-  //         <input
-  //           type="text"
-  //           placeholder="ZipCode"
-  //           value={zipCode}
-  //           onChange={(e) => setZipCode(e.target.value)}
-  //         />
-  //         <button type="submit">Finish Editing</button>
-  //       </form>
-  //     </section>
-  //   </>
-  // );
 }
