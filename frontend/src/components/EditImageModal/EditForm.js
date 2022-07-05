@@ -70,7 +70,7 @@ export default function EditForm(props) {
   };
 
   return (
-    <div>
+    <div className="login-form" style={{marginBottom: '88px'}}>
       <form onSubmit={handleSubmit}>
         {submitted && validationErrors.length > 0 && (
           <div>
@@ -81,23 +81,38 @@ export default function EditForm(props) {
             </ul>
           </div>
         )}
-        <input
-          type="text"
-          placeholder="Title"
-          value={title}
-          onChange={(e) => setTitle(e.target.value)}
-        />
-        <input
-          type="text"
-          placeholder="Img url"
-          value={imageUrl}
-          onChange={(e) => setImageUrl(e.target.value)}
-        />
-        <textarea
-          placeholder="Content"
-          value={content}
-          onChange={(e) => setContent(e.target.value)}
-        />
+        <div>
+          <div>
+            <label style={{ color: "white" }}>Title</label>
+          </div>
+          <input
+            type="text"
+            placeholder="Title"
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+          />
+        </div>
+        <div>
+          <div>
+            <label style={{ color: "white" }}>Image Url</label>
+          </div>
+          <input
+            type="text"
+            placeholder="Img url"
+            value={imageUrl}
+            onChange={(e) => setImageUrl(e.target.value)}
+          />
+        </div>
+        <div>
+          <div>
+            <label style={{ color: "white" }}>Content</label>
+          </div>
+          <textarea
+            placeholder="Content"
+            value={content}
+            onChange={(e) => setContent(e.target.value)}
+          />
+        </div>
         <button type="submit">Post Photo</button>
         <button onClick={() => props.setTrigger(false)}>cancel</button>
       </form>

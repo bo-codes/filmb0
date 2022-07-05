@@ -113,16 +113,18 @@ export default function ImageId() {
           // display: "block",
           marginLeft: "auto",
           marginRight: "auto",
-          paddingBottom: '3px',
+          paddingBottom: "3px",
           // marginBottom: "80px",
           // background: 'pink'
         }}
       >
-        <div style={{
-          boxShadow: "10px 10px 8px 10px white",
-          marginBottom: '20px',
-          // background: 'grey',
-          }}>
+        <div
+          style={{
+            boxShadow: "10px 10px 8px 10px white",
+            marginBottom: "20px",
+            // background: 'grey',
+          }}
+        >
           <img
             src={image.imageUrl}
             id="imageDetailImg"
@@ -133,39 +135,47 @@ export default function ImageId() {
               marginLeft: "auto",
               marginRight: "auto",
               marginTop: "30px",
-              paddingTop: '30px'
+              paddingTop: "30px",
               // boxShadow: "10px 10px 100px 100px white",
             }}
           ></img>
-          <div style={{
-            color: "white",
-            marginTop: '30px',
-             marginLeft: '30px',
-             marginRight: '30px',
-             marginBottom: '60px',
-             paddingBottom: '30px',
-             paddingTop: '10px',
-             textAlign: 'center',
-            //  background: 'purple'
-             }}>
+          <div
+            style={{
+              color: "white",
+              marginTop: "30px",
+              marginLeft: "30px",
+              marginRight: "30px",
+              marginBottom: "60px",
+              paddingBottom: "30px",
+              paddingTop: "10px",
+              textAlign: "center",
+              //  background: 'purple'
+            }}
+          >
             <h1>{image.title}</h1>
             {/* <p>{image.User.username}</p> */}
-            <p style={{paddingTop: '4px'}}>{image.content}</p>
+            <p style={{ paddingTop: "4px" }}>{image.content}</p>
           </div>
         </div>
-        <div style={{
-          padding: '9px',
-          // background: 'green'
-          }}>
+        <div
+          style={{
+            padding: "9px",
+            // background: 'green'
+          }}
+        >
           {sessionUser.id === image.userId && (
-            <div style={{
-              padding: '6px',
-              // background: 'red'
-              }}>
-              <EditFormModal />
-              <button onClick={onDelete}>
-                delete
-              </button>
+            <div
+              style={{
+                padding: "6px",
+                // background: 'red'
+              }}
+            >
+              <EditFormModal
+               style={{
+                overflowY: 'initial'
+               }}
+              />
+              <button onClick={onDelete}>delete</button>
               {/* <button onClick={onDelete}>
                 <i className="fa-solid fa-trash"></i>
               </button> */}

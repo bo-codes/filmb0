@@ -15,7 +15,7 @@ function EditFormModal() {
       </button> */}
       {showModal && (
         <EditModal onClose={() => setShowModal(false)}>
-          <EditForm trigger={showModal} setTrigger={setShowModal} />
+          <EditForm trigger={showModal} setTrigger={setShowModal} id='editForm'/>
         </EditModal>
       )}
     </>

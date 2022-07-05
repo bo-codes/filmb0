@@ -4,6 +4,8 @@ import { useDispatch } from 'react-redux';
 import { useHistory } from "react-router-dom";
 import * as sessionActions from '../../store/session';
 
+import '../../index.css'
+
 function ProfileButton({ user }) {
   const history = useHistory();
   const dispatch = useDispatch();
@@ -34,8 +36,8 @@ function ProfileButton({ user }) {
 
   return (
     <>
-      <button onClick={openMenu} className="profileBttn">
-        <i className="fa-solid fa-user">user</i>
+      <button onClick={openMenu} className="buttonlink" style={{fontSize: '16px'}}>
+        <i >USER</i>
       </button>
       {showMenu && (
         <div className="dropdown-content">

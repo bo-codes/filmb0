@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { thunkCreateImage } from "../../store/images";
 
+import '../../index.css'
+
 export default function ImageForm(props) {
   const dispatch = useDispatch();
   const sessionUser = useSelector((state) => state.session.user);
@@ -59,8 +61,8 @@ export default function ImageForm(props) {
   };
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
+    <div className="login-form" style={{marginBottom: '88px'}}>
+      <form onSubmit={handleSubmit} >
         {submitted && validationErrors.length > 0 && (
           <div>
             <ul>
@@ -70,23 +72,32 @@ export default function ImageForm(props) {
             </ul>
           </div>
         )}
-        <input
-          type="text"
-          placeholder="Title"
-          value={title}
-          onChange={(e) => setTitle(e.target.value)}
-        />
-        <input
-          type="text"
-          placeholder="Img url"
-          value={imageUrl}
-          onChange={(e) => setImageUrl(e.target.value)}
-        />
-        <textarea
-          placeholder="Content"
-          value={content}
-          onChange={(e) => setContent(e.target.value)}
-        />
+        <div>
+          <label style={{ color: "white" }}>Title</label>
+          <input
+            type="text"
+            placeholder="Title"
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+          />
+        </div>
+        <div>
+          <label style={{ color: "white" }}>Image Url</label>
+          <input
+            type="text"
+            placeholder="Img url"
+            value={imageUrl}
+            onChange={(e) => setImageUrl(e.target.value)}
+          />
+        </div>
+        <div>
+          <label style={{ color: "white" }}>Content</label>
+          <textarea
+            placeholder="Content"
+            value={content}
+            onChange={(e) => setContent(e.target.value)}
+          />
+        </div>
         <button type="submit">Post Photo</button>
         <button onClick={() => props.setTrigger(false)}>cancel</button>
       </form>

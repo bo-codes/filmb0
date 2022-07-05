@@ -9,10 +9,12 @@
   font-size: 18px;
 }
 
-.button {
+button {
   /* height: 40px; */
   background-color: rgb(70, 70, 101);
   color: white;
+  border: 0;
+  border-radius: 4px;
 }
 
 .background {

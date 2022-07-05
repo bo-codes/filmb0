@@ -44,10 +44,10 @@ const handleSubmit = (e) => {
 
   return (
     <>
-      <section className="reviewForm">
+      <section className="reviewForm" style={{marginBottom: '88px'}}>
         <h1>What are you thinking </h1>
         <form
-          className="reviewForm"
+          className="login-form"
           onSubmit={handleSubmit}
         >
           {submitted && validationErrors.length > 0 && (
@@ -62,13 +62,13 @@ const handleSubmit = (e) => {
               </ul>
             </div>
           )}
-          <label>Comment: </label>
+          <label style={{color: 'white'}}>Comment: </label>
           <textarea
             placeholder="start typing here..."
             value={comment}
             onChange={(e) => setComment(e.target.value)}
           />
-          <button type="submit">Submit Comment</button>
+          <button type="submit" style={{marginRight: '8px'}}>Submit Comment</button>
           <button onClick={() => props.setTrigger(false)}>cancel</button>
         </form>
       </section>
