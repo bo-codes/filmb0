@@ -27,7 +27,7 @@ export default function Comments() {
   return (
     <div style={{
       color: "white",
-      marginLeft: '77px',
+      marginLeft: '6%',
       marginTop: "160px",
       paddingTop: '110px',
       paddingBottom: '88px'
@@ -48,7 +48,7 @@ export default function Comments() {
           <LoginFormModal />
         </text>
       )}
-      <table style={{padding: '10px'}}>
+      <table style={{paddingLeft: '10px'}}>
         <thead>
           {/* <tr>
             <th>Name</th>
