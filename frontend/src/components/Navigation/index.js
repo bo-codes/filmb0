@@ -43,7 +43,7 @@ function Navigation({ isLoaded }){
   }
 
   return (
-    <div className="navBar" style={{marginBottom: '60px'}}>
+    <div className="navBar" style={{marginBottom: '100px'}}>
       <ul >
         <NavLink
           exact
