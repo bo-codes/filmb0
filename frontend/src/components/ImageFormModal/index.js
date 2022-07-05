@@ -8,7 +8,7 @@ function CreateImageModal() {
 
   return (
     <>
-      <button className="createBeachBttn" onClick={() => setShowModal(true)}>+</button>
+      <button onClick={() => setShowModal(true)} style={{fontSize: '28px', borderRadius: '8px', paddingLeft: '4px', paddingRight: '4px', margin: '10px'}}>new post</button>
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>
           <ImageForm trigger={showModal} setTrigger={setShowModal}/>

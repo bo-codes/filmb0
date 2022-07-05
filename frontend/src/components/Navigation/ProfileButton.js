@@ -34,17 +34,17 @@ function ProfileButton({ user }) {
 
   return (
     <>
-      <button onClick={openMenu} className='profileBttn'>
-        <i className="fa-solid fa-user" />
+      <button onClick={openMenu} className="profileBttn">
+        <i className="fa-solid fa-user">user</i>
       </button>
       {showMenu && (
         <div className="dropdown-content">
-          <ul className="profile-dropdown">
-            <li> Welcome, {user.username}</li>
-            <li>{user.email}</li>
+          <ul className="profile-dropdown" style={{ color: "white" }}>
+            <li style={{ marginTop: "18px" }}> Welcome, {user.username}</li>
+            <li style={{ marginTop: "5px" }}>{user.email}</li>
             <ul>
-              <button onClick={logout}>
-                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+              <button onClick={logout} style={{ marginTop: '18px'}}>
+                logout
               </button>
             </ul>
           </ul>

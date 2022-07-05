@@ -26,22 +26,24 @@ function Navigation({ isLoaded }){
   let sessionLinks;
   if (sessionUser) {
     sessionLinks = (
-      <ProfileButton user={sessionUser} />
+      <div style={{margin: '18px'}}>
+        <ProfileButton user={sessionUser} />
+      </div>
     );
   } else {
     sessionLinks = (
       <>
-        <NavLink to="/signup" id="signUp">
-          <button className="button">Sign Up</button>
+        <NavLink to="/signup" className='buttonlink'>
+          Sign Up
         </NavLink>
         <LoginFormModal />
-        <button onClick={handleDemo} className="button">Demo</button>
+        <button onClick={handleDemo} className="buttonlink">Demo</button>
       </>
     );
   }
 
   return (
-    <div className="navBar" style={{}}>
+    <div className="navBar" style={{marginBottom: '60px'}}>
       <ul >
         <NavLink
           exact
@@ -58,9 +60,9 @@ function Navigation({ isLoaded }){
             ></img>
           </>
         </NavLink>
-        <NavLink to="/images" className="buttonlink" style={{padding: '0px', marginRight: '14px', fontSize: '18px'}}>
+        {/* <NavLink to="/images" className="buttonlink" >
           Images
-        </NavLink>
+        </NavLink> */}
         {isLoaded && sessionLinks}
       </ul>
     </div>

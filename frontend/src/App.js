@@ -18,7 +18,7 @@ function App() {
   }, [dispatch]);
 
   return (
-    <div style={{overflow: "hidden"}} className='background'>
+    <div className='background'>
       <Navigation isLoaded={isLoaded} />
       {isLoaded && (
         <Switch>

@@ -34,13 +34,13 @@ export default function Comments() {
       paddingBottom: '88px'
       // background: 'blue'
       }}>
-      <h1 style={{marginBottom: '6px'}}>thoughts</h1>
+      <h1 style={{marginBottom: '6px'}}>thoughts:</h1>
       {!comments.length && (
         <>
-          <h2>
+          <p style={{paddingLeft: '16px', fontSize: '22px'}}>
             {" "}
-            thoughts: null
-          </h2>
+            no thoughts yet
+          </p>
         </>
       )}
       {!sessionUser && (

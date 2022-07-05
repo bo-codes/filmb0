@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom';
 import { thunkGetAllImages } from '../../store/images';
@@ -8,13 +8,15 @@ import ImageForm from '../ImageFormModal/ImageForm';
 import './images.css'
 
 
-
 export default function Images() {
   const dispatch = useDispatch();
+
 
   useEffect(() => {
     dispatch(thunkGetAllImages());
   }, [dispatch]);
+
+
 
   const imagesList = useSelector((state) => Object.values(state.images));
   const sessionUser = useSelector((state) => state.session.user);
@@ -26,12 +28,8 @@ export default function Images() {
         marginTop: '40px',
         marginLeft: '10px',
         marginBottom: '20px',
-        }}>Experience</h1>
-      {sessionUser && (
-        <>
-          <CreateImageModal />
-        </>
-      )}
+        fontSize: '10vw'
+        }}>Experiences</h1>\
       <div className="imageCard">
         {imagesList.map((image) => {
           return (
@@ -46,7 +44,7 @@ export default function Images() {
                   alt="coverImg"
                   className="image"
                   style={{ padding: 2.5 }}
-                >
+                  >
                 </img>
               </Link>
               {/* <h3 id="imageContentTitle">{image.title}</h3>
@@ -55,6 +53,13 @@ export default function Images() {
             </div>
           );
         })}
+      </div>
+      <div>
+        {sessionUser && (
+          <div>
+            <CreateImageModal />
+          </div>
+        )}
       </div>
     </div>
   );
