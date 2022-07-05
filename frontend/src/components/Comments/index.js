@@ -39,13 +39,13 @@ export default function Comments() {
         <>
           <h2>
             {" "}
-            Doest seem to be any comments yet... why don't you start us off!
+            thoughts: null
           </h2>
         </>
       )}
       {!sessionUser && (
         <text>
-          Want to leave a comment?
+          what are you thinking?
           <LoginFormModal />
         </text>
       )}

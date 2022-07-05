@@ -42,18 +42,23 @@ function Navigation({ isLoaded }){
 
   return (
     <div className="navBar" style={{}}>
-      <ul className="navBar">
-        <NavLink exact to="/" id="logo" style={{padding: '10px', marginTop: '10px'}}>
+      <ul >
+        <NavLink
+          exact
+          to="/"
+          id="logo"
+          style={{ padding: "10px", marginTop: "10px" }}
+        >
           <>
             <img
-              src="./favicon.png"
-              alt='icon'
+              src="./favicon3.png"
+              alt="icon"
               id="logoImg"
-              style={{height: '80px'}}
+              style={{ height: "80px" }}
             ></img>
           </>
         </NavLink>
-        <NavLink to="/images" id="beachesLink" className='buttonlink'>
+        <NavLink to="/images" className="buttonlink" style={{padding: '0px', marginRight: '14px', fontSize: '18px'}}>
           Images
         </NavLink>
         {isLoaded && sessionLinks}

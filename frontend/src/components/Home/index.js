@@ -19,7 +19,12 @@ export default function Home() {
 
   return (
     <div className="background" style={{ overflow: "hidden" }}>
-      <h1 id="title">Experience</h1>
+      <h1 id="title" style={{
+        color: 'white',
+        // marginTop: '40px',
+        // marginLeft: '10px',
+        // marginBottom: '20px',
+        }}>Experience</h1>
       {sessionUser && (
         <>
           <CreateImageModal />
