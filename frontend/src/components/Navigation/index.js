@@ -60,9 +60,9 @@ function Navigation({ isLoaded }){
             ></img>
           </>
         </NavLink>
-        {/* <NavLink to="/images" className="buttonlink" >
+        <NavLink to="/images" className="buttonlink" >
           Images
-        </NavLink> */}
+        </NavLink>
         {isLoaded && sessionLinks}
       </ul>
     </div>

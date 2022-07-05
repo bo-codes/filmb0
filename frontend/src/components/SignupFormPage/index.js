@@ -31,65 +31,68 @@ function SignupFormPage() {
   };
 
   return (
-    <div className="login-form">
-      <form onSubmit={handleSubmit} style={{color: 'white'}}>
-        <ul>
-          {errors.map((error, idx) => <li key={idx}>{error}</li>)}
-        </ul>
-        <div>
+    <div style={{textAlign: 'center'}}>
+        <h1 style={{color: 'white'}}>join</h1>
+      <div className="login-form" style={{marginTop: '28px'}}>
+        <form onSubmit={handleSubmit} style={{color: 'white'}}>
+          <ul>
+            {errors.map((error, idx) => <li key={idx}>{error}</li>)}
+          </ul>
           <div>
-            <label>
-              Username
-            </label>
-          </div>
-          <input
-            type="text"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-            required
-          />
-        </div>
-        <div>
-          <div>
-            <label>
-              Email
-            </label>
-          </div>
-          <input
-            type="text"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
-        </div>
-        <div>
-          <div>
-            <label>
-              Password
-            </label>
-          </div>
+            <div>
+              <label>
+                Username
+              </label>
+            </div>
             <input
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
+              type="text"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
               required
             />
-        </div>
-        <div>
-          <div>
-            <label>
-              Confirm Password
-            </label>
           </div>
+          <div>
+            <div>
+              <label>
+                Email
+              </label>
+            </div>
             <input
-              type="password"
-              value={confirmPassword}
-              onChange={(e) => setConfirmPassword(e.target.value)}
+              type="text"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               required
             />
-        </div>
-        <button type="submit">Sign Up</button>
-      </form>
+          </div>
+          <div>
+            <div>
+              <label>
+                Password
+              </label>
+            </div>
+              <input
+                type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+              />
+          </div>
+          <div>
+            <div>
+              <label>
+                Confirm Password
+              </label>
+            </div>
+              <input
+                type="password"
+                value={confirmPassword}
+                onChange={(e) => setConfirmPassword(e.target.value)}
+                required
+              />
+          </div>
+          <button type="submit">Sign Up</button>
+        </form>
+      </div>
     </div>
   );
 }
