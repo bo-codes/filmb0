@@ -45,7 +45,7 @@ const handleSubmit = (e) => {
   return (
     <>
       <section className="reviewForm">
-        <h1>Create a review </h1>
+        <h1>What are you thinking </h1>
         <form
           className="reviewForm"
           onSubmit={handleSubmit}
@@ -69,6 +69,7 @@ const handleSubmit = (e) => {
             onChange={(e) => setComment(e.target.value)}
           />
           <button type="submit">Submit Comment</button>
+          <button onClick={() => props.setTrigger(false)}>cancel</button>
         </form>
       </section>
     </>

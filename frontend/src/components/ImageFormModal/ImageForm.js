@@ -88,6 +88,7 @@ export default function ImageForm(props) {
           onChange={(e) => setContent(e.target.value)}
         />
         <button type="submit">Post Photo</button>
+        <button onClick={() => props.setTrigger(false)}>cancel</button>
       </form>
     </div>
   );

@@ -41,15 +41,16 @@ function Navigation({ isLoaded }){
   }
 
   return (
-    <div className="navBar" style={{overflow: "scroll"}}>
+    <div className="navBar" style={{}}>
       <ul className="navBar">
-        <NavLink exact to="/" id="logo" className='buttonlink'>
+        <NavLink exact to="/" id="logo" style={{padding: '10px', marginTop: '10px'}}>
           <>
             <img
-              src="/Users/eli/Pictures/Lightroom Saved Photos/for sale/filmb0--/frontend/public/film.png"
+              src="./favicon.png"
+              alt='icon'
               id="logoImg"
+              style={{height: '80px'}}
             ></img>
-            <label id="logoTitle">b0film</label>
           </>
         </NavLink>
         <NavLink to="/images" id="beachesLink" className='buttonlink'>

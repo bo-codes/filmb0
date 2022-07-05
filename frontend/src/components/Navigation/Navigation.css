@@ -1,8 +1,8 @@
 .navBar {
   box-sizing:content-box;
   background-color: red;
-  height: 80px;
-  padding: 0;
+  height: 100px;
+  padding: 10px;
   border: 0;
   margin: 0;
 }
