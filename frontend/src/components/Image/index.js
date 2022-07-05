@@ -35,16 +35,72 @@ export default function ImageId() {
 
   if(!sessionUser) {
     return (
-      <div className='background'>
-        <div className='imageDetails'>
-          <img src={image.imageUrl} id='imageDetailImg'></img>
-          <h1>{image.title}</h1>
-          <p>{image.content}</p>
-
+      <div className="background">
+        <div
+          className="imageDetails"
+          style={{
+            maxWidth: "88vw",
+            maxHeight: "88vh",
+            // display: "block",
+            marginLeft: "auto",
+            marginRight: "auto",
+            paddingBottom: "3px",
+            // marginBottom: "80px",
+            // background: 'pink'
+          }}
+        >
+          <div
+            style={{
+              boxShadow: "10px 10px 8px 10px white",
+              marginBottom: "20px",
+              // background: 'grey',
+            }}
+          >
+            <img
+              src={image.imageUrl}
+              id="imageDetailImg"
+              style={{
+                maxWidth: "88vw",
+                maxHeight: "88vh",
+                display: "block",
+                marginLeft: "auto",
+                marginRight: "auto",
+                marginTop: "30px",
+                paddingTop: "30px",
+                // boxShadow: "10px 10px 100px 100px white",
+              }}
+            ></img>
+            <div
+              style={{
+                color: "white",
+                marginTop: "30px",
+                marginLeft: "30px",
+                marginRight: "30px",
+                marginBottom: "60px",
+                paddingBottom: "30px",
+                paddingTop: "10px",
+                textAlign: "center",
+                //  background: 'purple'
+              }}
+            >
+              <h1>{image.title}</h1>
+              {/* <p>{image.User.username}</p> */}
+              <p style={{ paddingTop: "4px" }}>{image.content}</p>
+            </div>
+          </div>
         </div>
         <Comments />
       </div>
-      )
+      // <div className='background'>
+      //   <div className='imageDetails'>
+      //     <img src={image.imageUrl} id='imageDetailImg'></img>
+      //     <h1>{image.title}</h1>
+      //     <p>{image.content}</p>
+
+      //   </div>
+      //   <Comments />
+      // </div>
+    );
   }
 
   return (
